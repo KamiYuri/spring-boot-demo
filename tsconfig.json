@@ -1,14 +1,22 @@
 {
-    "compilerOptions": {
-      "target": "esnext",
-      "module": "esnext",
-      "moduleResolution": "node",
-      "strict": true,
+  "compileOnSave": true,
+  "compilerOptions": {
+      "outDir": "./built",
       "allowJs": true,
-      "jsx": "preserve",
-      "sourceMap": true,
-      "lib": ["esnext", "dom"],
-      "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }]
-    },
-    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
-  }
+      "target": "esnext",
+      "allowUnreachableCode": false,
+      "noImplicitReturns": true,
+      "noImplicitAny": true,
+      "typeRoots": [ "./typings" ],
+      "outFile": "./built/combined.js",
+      "jsx": "preserve"
+  },
+  "include": [
+      "./**/*"
+  ],
+  "exclude": [
+      "./plugins/**/*",
+      "./typings/**/*",
+      "./built/**/*"
+  ]
+}
